@@ -60,6 +60,7 @@ const NavBar = styled.nav`
         }
     }
     
+    height: 50px;
     padding: .4rem;
     background-color: #221b1bc7;
     display: flex;
@@ -102,18 +103,33 @@ const NavBar = styled.nav`
         display: block;
         margin-left: auto;
         margin-right: auto;
-        top: 10%;
+        top: 10%;//donde aparece el texto
         left: 0;
         right: 0;
         a{
             font-size: 2rem;
-            color: #ffffffc7;
+            color: #ffffffff;
             margin-top: 1rem;
         }
-        @media(min-width: 768px){//cuando amplias con toggle activado
+        @media(min-width: 768px){//cuando la ventana se agranda con toggle activado
             text-align:right;
             font-size: 1.5rem;
         }
+        @media(max-height: 860px){//para ventanas mas reducidas como telefonos movil
+            a{
+                font-size: 1.7rem;
+                margin-top: 0.8rem;
+                color: #ffffffff;
+            } 
+        }
+        @media(max-height: 660px){//para ventanas muy pequeñas de largo
+            a{
+                font-size: 1.5rem;
+                margin-top: 0.6rem;
+                color: #ffffffff;
+            } 
+        }
+        
     }
     
 
@@ -133,11 +149,14 @@ const ModDiv = styled.div`
     transition: all 0.7s ease-in-out;//transición del bloque al darle al boton de toggle
     
     &.active{//cuando esta activo el toggle
-        //border-radius: 0 0 80% 0;
         height: 40%;
         width: 100%;
         top: 0;
         left: 0;
+        @media (min-width: 768px) {
+        height: 64px; /* Establecer la altura en un 10% en pantallas más grandes */
     }
+    }
+    
     
 `
